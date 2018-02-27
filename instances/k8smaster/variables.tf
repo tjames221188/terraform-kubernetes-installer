@@ -68,6 +68,10 @@ variable "api_server_private_key_pem" {}
 variable "api_server_cert_pem" {}
 variable "k8s_apiserver_token_admin" {}
 
+variable heapster_enabled {}
+
+variable heapster_version {}
+
 # etcd
 variable "etcd_discovery_url" {}
 variable "etcd_endpoints" {}

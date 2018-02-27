@@ -382,6 +382,16 @@ variable dedicated_nat_subnets {
   default     = "true"
 }
 
+variable heapster_enabled {
+  description = "Whether to setup heapster - TODO make this better"
+  default     = "true"
+}
+
+variable heapster_version {
+  description = "The version of heapster to use"
+  default     = "1.5.1"
+}
+
 # iSCSI
 variable "worker_iscsi_volume_create" {
   description = "Bool if an iscsi volume should be attached and mounted at /var/lib/docker"
