@@ -383,7 +383,11 @@ variable dedicated_nat_subnets {
 }
 
 variable heapster_enabled {
+<<<<<<< HEAD
   description = "Whether to install heapster, required for Horizontal Pod Autoscaling"
+=======
+  description = "Whether to setup heapster - TODO make this better"
+>>>>>>> f1c70d3fe3c618d1ecafabc78bc19eec876266b2
   default     = "true"
 }
 
