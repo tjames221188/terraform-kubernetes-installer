@@ -235,6 +235,8 @@ module "instances-k8smaster-ad1" {
   volume_provisioner_secret   = "${module.oci-volume-provisioner.volume-provisioner-yaml}"
   assign_private_ip           = "${var.master_maintain_private_ip}"
   etcd_endpoints              = "${local.etcd_endpoints}"
+  heapster_enabled            = "${var.heapster_enabled}"
+  heapster_version            = "${var.heapster_version}"
 }
 
 module "instances-k8smaster-ad2" {
@@ -277,6 +279,8 @@ module "instances-k8smaster-ad2" {
   volume_provisioner_secret   = "${module.oci-volume-provisioner.volume-provisioner-yaml}"
   assign_private_ip           = "${var.master_maintain_private_ip}"
   etcd_endpoints              = "${local.etcd_endpoints}"
+  heapster_enabled            = "${var.heapster_enabled}"
+  heapster_version            = "${var.heapster_version}"
 }
 
 module "instances-k8smaster-ad3" {
@@ -319,6 +323,8 @@ module "instances-k8smaster-ad3" {
   volume_provisioner_secret   = "${module.oci-volume-provisioner.volume-provisioner-yaml}"
   assign_private_ip           = "${var.master_maintain_private_ip}"
   etcd_endpoints              = "${local.etcd_endpoints}"
+  heapster_enabled            = "${var.heapster_enabled}"
+  heapster_version            = "${var.heapster_version}"
 }
 
 module "instances-k8sworker-ad1" {

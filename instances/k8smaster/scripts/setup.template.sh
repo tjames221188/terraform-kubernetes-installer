@@ -211,4 +211,19 @@ rm -f /root/volume-provisioner-secret.yaml
 
 yum install -y nfs-utils
 
+## Install heapster if enabled
+if [[ "${heapster_enabled}" == "true" ]]; then
+
+    echo "Installing heapster"
+    echo "version: ${heapster_version}"
+    # Download the required version
+    curl -L --retry 3 https://github.com/kubernetes/heapster/archive/v${heapster_version}.tar.gz | tar xz
+
+    # Install heapster into the cluster
+    kubectl create -f heapster-${heapster_version}/deploy/kube-config/influxdb/
+    kubectl create -f heapster-${heapster_version}/deploy/kube-config/heapster-rbac.yaml
+else
+    echo "Skipping heapster installation"
+fi
+
 echo "Finished running setup.sh"
